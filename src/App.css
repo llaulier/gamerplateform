@@ -1,0 +1,83 @@
+.App {
+  display: grid;
+  grid-template-areas:
+    "aside hero hero hero"
+    "aside hero hero hero"
+    "aside content content sidebar"
+    "aside content content sidebar"
+    "aside content content sidebar"
+    "aside content content sidebar"
+    "footer footer footer footer";
+  grid-template-rows: auto;
+  grid-template-columns: 10% 1fr 1fr 1fr;
+  grid-column-gap: 2rem;
+}
+
+body {
+  background-color: #292731;
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero h1 {
+  color: white;
+  text-align: center;
+}
+
+.hero {
+  grid-row-start: hero;
+  grid-row-end: hero;
+  grid-column-start: hero;
+  grid-column-end: hero;
+  position: relative;
+  background: url(https://media.rawg.io/media/screenshots/6a0/6a08afca95261a2fe221ea9e01d28762.jpg)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  padding-top: 30px;
+  min-height: 550px;
+  letter-spacing: 2px;
+}
+.hero h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Lato", sans-serif;
+  color: white;
+  z-index: 1;
+}
+
+.content {
+  grid-row: content;
+  grid-column: content;
+}
+
+.sidebar {
+  grid-row: sidebar;
+  grid-column: sidebar;
+  justify-self: start;
+}
+
+.aside {
+  background-color: var(--purple_color);
+  background-image: linear-gradient(174deg, #613fa6 0%, #3b2166 100%);
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+@media (max-width: 880px) {
+  .App {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 10% 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+  .sidebar .Contact .name,
+  .Contact .status .status-text {
+    display: none;
+  }
+
+  @media (max-width: 580px) {
+    .sidebar {
+      display: none;
+    }
+  }
+}

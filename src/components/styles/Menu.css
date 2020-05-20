@@ -1,0 +1,6 @@
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row: 3fr;
+  justify-items: center;
+}
