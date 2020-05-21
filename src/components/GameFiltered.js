@@ -6,20 +6,23 @@ function GameFiltered({ sortRating, sortAlpha }) {
     <div className="sortbyratings">
       <p>
         Filter by:
-        <button
-          onClick={() => {
-            sortRating();
-          }}
-        >
-          Top game
-        </button>
-        <button
-          onClick={() => {
-            sortAlpha();
-          }}
-        >
-          A to Z
-        </button>
+        <ul>
+          {" "}
+          <li
+            onClick={() => {
+              sortRating();
+            }}
+          >
+            Top game
+          </li>
+          <li
+            onClick={() => {
+              sortAlpha();
+            }}
+          >
+            A to Z
+          </li>
+        </ul>
       </p>
     </div>
   );
