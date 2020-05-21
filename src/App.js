@@ -14,7 +14,7 @@ function App() {
 
   const contextValue = {
     games: [],
-    setGames: ""
+    setGames: "",
   };
 
   useEffect(() => {
@@ -25,34 +25,34 @@ function App() {
   const getGames = () => {
     axios
       .get(url)
-      .then(res => {
+      .then((res) => {
         setGames(res.data);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
 
   if (loading) {
-    return <p>Loading GameList...</p>;
+    return <p className="loader">Loading GameList...</p>;
   }
   const sortRating = () => {
-    const best = [...games].sort(function(a, b) {
+    const best = [...games].sort(function (a, b) {
       return b.rating - a.rating;
     });
     setGames(best);
   };
 
   const sortAlpha = () => {
-    const aToZ = [...games].sort(function(a, b) {
+    const aToZ = [...games].sort(function (a, b) {
       return a.name.localeCompare(b.name);
     });
     setGames(aToZ);
   };
-  const handleDelete = id => {
+  const handleDelete = (id) => {
     const updatedGames = [...games];
-    const index = updatedGames.filter(game => games.id === id);
+    const index = updatedGames.filter((game) => games.id === id);
 
     updatedGames.splice(index, 1);
 
