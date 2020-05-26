@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
-//import { Route, Switch } from "react-router-dom";
-import GameList from "./components/GameList";
 import "./App.css";
-import ContactList from "./components/ContactList.js";
+
 import axios from "axios";
-import GameContext from "./components/GameContext";
-//import Random from "./components/Random";
+import React, { useEffect, useState } from "react";
+// import Random from "./components/Random";
 import { Block } from "styled-loaders-react";
+
+import ContactList from "./components/ContactList.js";
+import GameContext from "./components/GameContext";
+// import { Route, Switch } from "react-router-dom";
+import GameList from "./components/GameList";
 
 function App() {
   const url = "https://wild-games.herokuapp.com/api/v1";
