@@ -1,9 +1,9 @@
 import "./App.css";
 
 import axios from "axios";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 // import Random from "./components/Random";
-import {Block} from "styled-loaders-react";
+import { Block } from "styled-loaders-react";
 
 import ContactList from "./components/ContactList.js";
 import GameContext from "./components/GameContext";
@@ -16,8 +16,8 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const contextValue = {
-    games : [],
-    setGames : "",
+    games: [],
+    setGames: "",
   };
 
   useEffect(() => {
@@ -26,27 +26,32 @@ function App() {
   }, []);
 
   const getGames = () => {
-    axios.get(url)
-        .then((res) => {
-          setGames(res.data);
-          setLoading(false);
-        })
-        .catch((err) => { console.log(err); });
+    axios
+      .get(url)
+      .then((res) => {
+        setGames(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const sortRating = () => {
-    const best =
-        [...games ].sort(function(a, b) { return b.rating - a.rating; });
+    const best = [...games].sort(function (a, b) {
+      return b.rating - a.rating;
+    });
     setGames(best);
   };
 
   const sortAlpha = () => {
-    const aToZ = [...games ].sort(function(
-        a, b) { return a.name.localeCompare(b.name); });
+    const aToZ = [...games].sort(function (a, b) {
+      return a.name.localeCompare(b.name);
+    });
     setGames(aToZ);
   };
   const handleDelete = (id) => {
-    const updatedGames = [...games ];
+    const updatedGames = [...games];
     const index = updatedGames.filter((game) => games.id === id);
 
     updatedGames.splice(index, 1);
@@ -56,17 +61,16 @@ function App() {
 
   return (
     <>
-      {
-    loading
-        ? (<div><p className = "paragraphApp">Games are loading<
-              /p>
+      {loading ? (
+        <div>
+          <p className="paragraphApp">Games are loading</p>
           <Block color="white" size="60px" duration="8s" />
-           </div>
+        </div>
       ) : (
         <GameContext.Provider value={contextValue}>
           <div className="hero">
             <h1>StreamGame</h1>
-           </div>
+          </div>
 
           <div className="App">
             <div className="content">
@@ -77,14 +81,16 @@ function App() {
                 sortAlpha={sortAlpha}
                 onDelete={handleDelete}
               />
-           </div>
+            </div>
 
             <div className="sidebar">
               <ContactList />
-           </div>
-          </div></GameContext.Provider>
+            </div>
+          </div>
+        </GameContext.Provider>
       )}
-    </>);
+    </>
+  );
 }
 
 export default App;
