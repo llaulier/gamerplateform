@@ -6,6 +6,7 @@ import ContactList from "./components/ContactList.js";
 import axios from "axios";
 import GameContext from "./components/GameContext";
 //import Random from "./components/Random";
+import { Block } from "styled-loaders-react";
 
 function App() {
   const url = "https://wild-games.herokuapp.com/api/v1";
@@ -14,7 +15,7 @@ function App() {
 
   const contextValue = {
     games: [],
-    setGames: ""
+    setGames: "",
   };
 
   useEffect(() => {
@@ -25,34 +26,31 @@ function App() {
   const getGames = () => {
     axios
       .get(url)
-      .then(res => {
+      .then((res) => {
         setGames(res.data);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
 
-  if (loading) {
-    return <p>Loading GameList...</p>;
-  }
   const sortRating = () => {
-    const best = [...games].sort(function(a, b) {
+    const best = [...games].sort(function (a, b) {
       return b.rating - a.rating;
     });
     setGames(best);
   };
 
   const sortAlpha = () => {
-    const aToZ = [...games].sort(function(a, b) {
+    const aToZ = [...games].sort(function (a, b) {
       return a.name.localeCompare(b.name);
     });
     setGames(aToZ);
   };
-  const handleDelete = id => {
+  const handleDelete = (id) => {
     const updatedGames = [...games];
-    const index = updatedGames.filter(game => games.id === id);
+    const index = updatedGames.filter((game) => games.id === id);
 
     updatedGames.splice(index, 1);
 
@@ -60,29 +58,36 @@ function App() {
   };
 
   return (
-    <div>
-      <GameContext.Provider value={contextValue}>
-        <div className="hero">
-          <h1>StreamGame</h1>
+    <>
+      {loading ? (
+        <div>
+          <p className="paragraphApp">Games are loading</p>
+          <Block color="white" size="60px" duration="8s" />
         </div>
-
-        <div className="App">
-          <div className="content">
-            <GameList
-              key={games.id}
-              game={games}
-              sortRating={sortRating}
-              sortAlpha={sortAlpha}
-              onDelete={handleDelete}
-            />
+      ) : (
+        <GameContext.Provider value={contextValue}>
+          <div className="hero">
+            <h1>StreamGame</h1>
           </div>
 
-          <div className="sidebar">
-            <ContactList />
+          <div className="App">
+            <div className="content">
+              <GameList
+                key={games.id}
+                game={games}
+                sortRating={sortRating}
+                sortAlpha={sortAlpha}
+                onDelete={handleDelete}
+              />
+            </div>
+
+            <div className="sidebar">
+              <ContactList />
+            </div>
           </div>
-        </div>
-      </GameContext.Provider>
-    </div>
+        </GameContext.Provider>
+      )}
+    </>
   );
 }
 
