@@ -63,6 +63,11 @@ body {
   font-size: 0.9rem;
   color: #ffffff;
 }
+.paragraphApp {
+  color: white;
+  font-size: large;
+  text-align: center;
+}
 @media (max-width: 880px) {
   .App {
     display: grid;
