@@ -1,37 +1,32 @@
 import React from "react";
+import "./styles/Menu.css";
+import "../App.css";
 
-return (
-  <div class="container">
-    <aside>
-      <div class="menu">
-        <img
-          src="https://media-exp1.licdn.com/dms/image/C4E03AQHgKaLf34VqVg/profile-displayphoto-shrink_200_200/0?e=1594252800&v=beta&t=p4sXfGehISolWyrVKUqd7bzUMinCwajiephHNjVcCIE"
-          alt="My Pic"
-        />
-        <div class="menu__info">
-          <h4>
-            <img src="/twitch.png" alt="twitch logo" />
-          </h4>
+const Menu = () => {
+  return (
+    <>
+      <aside className="navbar">
+        <div class="menu">
+          <div class="menu__info">
+            <img
+              src="https://randomuser.me/api/portraits/men/17.jpg"
+              alt="My Pic"
+            />
+            <h4>Paul White</h4>
+          </div>
+          <nav>
+            <ul>
+              <a href="https://www.twitch.tv/">
+                <li>
+                  <img src="/twitch.png" alt="twitch logo" />
+                  <span>twitch.tv</span>
+                </li>
+              </a>
+            </ul>
+          </nav>
         </div>
-      </div>
-      <div id="navbar">
-        <nav>
-          <ul>
-            <a>
-              <li>
-                <img />
-                <span></span>
-              </li>
-            </a>
-            <a>
-              <li>
-                <img />
-                <span></span>
-              </li>
-            </a>
-          </ul>
-        </nav>
-      </div>
-    </aside>
-  </div>
-);
+      </aside>
+    </>
+  );
+};
+export default Menu;

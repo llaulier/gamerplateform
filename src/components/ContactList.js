@@ -35,7 +35,7 @@ const users = [
   },
   {
     id: "5",
-    name: "Olivia Witendhal",
+    name: "Olivia Witt",
     avatar: "https://randomuser.me/api/portraits/women/77.jpg",
     online: true,
   },
