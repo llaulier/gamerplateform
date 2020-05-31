@@ -22,6 +22,12 @@ const Menu = () => {
                   <span>twitch.tv</span>
                 </li>
               </a>
+              <a href="https://discord.com/">
+                <li>
+                  <img src="/discord.png" alt="discord logo" />
+                  <span>discord</span>
+                </li>
+              </a>
             </ul>
           </nav>
         </div>

@@ -14,7 +14,7 @@
     "aside content content sidebar"
     "footer footer footer footer";
   grid-template-rows: auto;
-  grid-template-columns: 10% 1fr 1fr 1fr;
+  grid-template-columns: 10% 1fr 2fr 1fr;
   grid-column-gap: 0;
 }
 
@@ -53,18 +53,20 @@ a {
   font-family: "Lato", sans-serif;
   color: white;
   z-index: 1;
+  font-size: xx-large;
 }
 
 .content {
   grid-row: content;
   grid-column: content;
-  margin-left: 2rem;
+  margin-left: 0.8rem;
 }
 
 .sidebar {
   grid-row: sidebar;
   grid-column: sidebar;
-  justify-self: start;
+  justify-self: stretch;
+  margin-left: 0.8rem;
 }
 
 .aside {
@@ -82,7 +84,8 @@ a {
   font-size: large;
   text-align: center;
 }
-@media (max-width: 960px) {
+
+@media (max-width: 1090px) {
   .App {
     display: grid;
     grid-template-rows: auto;
@@ -92,10 +95,15 @@ a {
   .Contact .status .status-text {
     display: none;
   }
+}
 
-  @media (max-width: 580px) {
-    .sidebar {
-      display: none;
-    }
+@media (max-width: 390px) {
+  .sidebar {
+    display: none;
+  }
+  .App {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 20% 1fr;
   }
 }
