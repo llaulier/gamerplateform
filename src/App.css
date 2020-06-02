@@ -28,14 +28,7 @@ body {
   grid-row-end: hero;
   grid-column-start: hero;
   grid-column-end: hero;
-  position: relative;
-  background: url(https://media.rawg.io/media/screenshots/6a0/6a08afca95261a2fe221ea9e01d28762.jpg)
-    no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
   padding-top: 30px;
-  min-height: 550px;
   letter-spacing: 2px;
 }
 .hero h1 {
