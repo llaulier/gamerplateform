@@ -71,8 +71,7 @@ function App() {
         <GameContext.Provider value={contextValue}>
           <div className="App">
             <div className="hero">
-              <h1>StreamGame</h1>
-              <button>Random me !</button>
+              <h1>Game Plateform</h1>
             </div>
             <div className="aside">
               <Menu />

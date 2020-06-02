@@ -6,26 +6,27 @@ const Menu = () => {
   return (
     <>
       <aside className="navbar">
-        <div class="menu">
-          <div class="menu__info">
-            <img
-              src="https://randomuser.me/api/portraits/men/17.jpg"
-              alt="My Pic"
-            />
-            <h4>Paul White</h4>
+        <div className="menu">
+          <div className="menu__info">
+            <a href="https://www.twitch.tv/">
+              <img src="/twitch.png" alt="twitch logo" />
+            </a>
           </div>
           <nav>
             <ul>
               <a href="https://www.twitch.tv/">
                 <li>
-                  <img src="/twitch.png" alt="twitch logo" />
-                  <span>twitch.tv</span>
+                  <img src="/film.png" alt="movie logo" />
                 </li>
               </a>
               <a href="https://discord.com/">
                 <li>
-                  <img src="/discord.png" alt="discord logo" />
-                  <span>discord</span>
+                  <img src="/computer.png" alt="game logo" />
+                </li>
+              </a>
+              <a href="https://store.steampowered.com/?l=french">
+                <li>
+                  <img src="/steam.png" alt="steam logo" />
                 </li>
               </a>
             </ul>
