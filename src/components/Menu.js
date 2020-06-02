@@ -19,16 +19,20 @@ const Menu = () => {
                   <img src="/film.png" alt="movie logo" />
                 </li>
               </a>
-              <a href="https://discord.com/">
-                <li>
-                  <img src="/computer.png" alt="game logo" />
-                </li>
-              </a>
+              <li>
+                <img src="/computer.png" alt="game logo" />
+              </li>
               <a href="https://store.steampowered.com/?l=french">
                 <li>
                   <img src="/steam.png" alt="steam logo" />
                 </li>
               </a>
+              <li>
+                <img src="/paint.png" alt="theme" />
+              </li>
+              <li>
+                <img src="/star.png" alt="favorite" />
+              </li>
             </ul>
           </nav>
         </div>
