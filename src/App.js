@@ -9,6 +9,7 @@ import ContactList from "./components/ContactList.js";
 import GameContext from "./components/GameContext";
 // import { Route, Switch } from "react-router-dom";
 import GameList from "./components/GameList";
+import Menu from "./components/Menu";
 
 function App() {
   const url = "https://wild-games.herokuapp.com/api/v1";
@@ -69,16 +70,19 @@ function App() {
         </div>
       ) : (
         <GameContext.Provider value={contextValue}>
-          <div className="hero">
-            <h1>StreamGame</h1>
-            <video className="hero" width="640" controls>
-              {games.map((item) => (
-                <source key={item.id} src={item.clip.clip} alt="video" />
-              ))}
-            </video>
-          </div>
-
           <div className="App">
+            <div className="hero">
+              <h1>StreamGame</h1>
+              <video className="hero" width="640" controls>
+                {games.map((item) => (
+                  <source key={item.id} src={item.clip.clip} alt="video" />
+                ))}
+              </video>
+            </div>
+            <div className="aside">
+              <Menu />
+            </div>
+
             <div className="content">
               <GameList
                 key={games.id}
