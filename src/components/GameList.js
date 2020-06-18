@@ -8,11 +8,11 @@ export default function GameList({ game, sortRating, sortAlpha, onDelete }) {
       <h3>My game list</h3>
       <GameFiltered sortRating={sortRating} sortAlpha={sortAlpha} />
       <div className="container">
-        {game.map(games => (
+        {game.map((games) => (
           <div className="view">
             <Game game={games} key={games.id} />
-            <img src={games.background_image} alt={games.name} />
             <button onClick={() => onDelete(games.id)}>-</button>
+            <img src={games.background_image} alt={games.name} />
           </div>
         ))}
       </div>
