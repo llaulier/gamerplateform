@@ -44,6 +44,7 @@ a {
   -moz-background-size: cover;
   background-size: cover;
   padding-top: 30px;
+  padding-bottom: 30px;
   letter-spacing: 2px;
 }
 .hero h1 {
@@ -53,8 +54,22 @@ a {
   color: white;
   z-index: 1;
   font-size: xx-large;
+  margin-bottom: 15px;
 }
-
+.video_container {
+  display: flex;
+  justify-content: center;
+}
+.arrow {
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+  margin: 1.5%;
+  align-self: center;
+}
+.video {
+  width: 70vw;
+}
 .content {
   grid-row: content;
   grid-column: content;

@@ -72,12 +72,16 @@ function App() {
         <GameContext.Provider value={contextValue}>
           <div className="App">
             <div className="hero">
-              <h1>StreamGame</h1>
-              <video className="hero" width="640" controls>
-                {games.map((item) => (
-                  <source key={item.id} src={item.clip.clip} alt="video" />
-                ))}
-              </video>
+              <h1>Game Plateforme</h1>
+              <div className="video_container">
+                <p className="arrow"> &#60; </p>
+                <video className="video" controls>
+                  {games.map((item) => (
+                    <source key={item.id} src={item.clip.clip} alt="video" />
+                  ))}
+                </video>
+                <p className="arrow"> &#62; </p>
+              </div>
             </div>
             <div className="aside">
               <Menu />
