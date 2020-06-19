@@ -1,4 +1,4 @@
-# streamgame
+# Game Plateform
 
 => See the result [on this website](https://gamer-plateform.netlify.app/)
 
